@@ -1,15 +1,10 @@
-import { Text, View } from "react-native";
+// prettier-ignore
+import { Redirect } from "expo-router";
+import React from "react";
+import "../global.css";
 
-export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
-  );
-}
+const Index = () => {
+  return <Redirect href={"/(tabs)/home"} />;
+};
+
+export default Index;
