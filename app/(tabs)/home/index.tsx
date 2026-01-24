@@ -47,6 +47,10 @@ const Home = () => {
       </View>
       <View className="w-[80%] mx-auto mt-[20px]">
         <ProgressBar innerText="30%" outerText="$20,000" progress="30%" />
+        <View className="flex flex-row items-center gap-x-[10px] mx-auto mt-[10px]">
+          <AntDesign name="check-square" size={20} color="black" />
+          <Text className="text-[20px]">30% of your expenses. Looks good.</Text>
+        </View>
       </View>
     </View>
   );
