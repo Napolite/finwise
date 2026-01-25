@@ -1,4 +1,5 @@
 import ProgressBar from "@/components/progress-bar";
+import HomeScreen from "@/screen-components/home-components/homescreen";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import React from "react";
@@ -52,6 +53,7 @@ const Home = () => {
           <Text className="text-[20px]">30% of your expenses. Looks good.</Text>
         </View>
       </View>
+      <HomeScreen />
     </View>
   );
 };

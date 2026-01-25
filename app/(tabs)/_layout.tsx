@@ -13,9 +13,10 @@ const TabsLayout = () => {
             borderTopWidth: 0,
             paddingBottom: 6,
             paddingTop: 6,
-            height: 60,
+            height: 80,
             borderTopLeftRadius: 50,
             borderTopRightRadius: 50,
+            position: "absolute",
           },
         }}
       >
