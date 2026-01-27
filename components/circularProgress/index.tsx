@@ -1,10 +1,13 @@
+//Simple circular progress bar.
+//progress is 0-1 multiplied by 100
+
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import Svg, { Circle, Defs, LinearGradient, Stop } from "react-native-svg";
 
 type CircularProps = {
   size: number;
-  progress: number;
+  progress: 0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1;
   strokeWidth?: number;
   fill1: string;
   fill2: string;
@@ -44,7 +47,7 @@ function Circular({
             cx={center}
             cy={center}
             r={radius}
-            stroke="#3f3f46"
+            stroke="#ffffff"
             strokeWidth={strokeWidth}
             fill="none"
           />
@@ -61,9 +64,7 @@ function Circular({
           strokeLinecap="round"
           strokeDasharray={`${circumference}`}
           strokeDashoffset={offset}
-          rotation={90}
-          originX={center}
-          originY={center}
+          transform={`rotate(90 ${center} ${center})`}
         />
       </Svg>
 

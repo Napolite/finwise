@@ -1,5 +1,6 @@
+import Circular from "@/components/circularProgress";
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const HomeScreen = () => {
   return (
@@ -13,10 +14,20 @@ const HomeScreen = () => {
       }}
     >
       <View
-        className="w-[357px] h-[15vw] bg-[#00D09E] mx-auto px-[20px] rounded-[20px]"
-        style={{ height: 152, width: 357 }}
+        className="w-[357px] h-[15vh] bg-[#00D09E] mx-auto px-[20px] rounded-[20px] py-[10px]"
+        style={{ width: 357 }}
       >
-        <Text>Helooooooooooooooooo</Text>
+        <View>
+          <Circular
+            size={68}
+            progress={0.5}
+            fill1={"#0068FF"}
+            fill2={"#0068FF"}
+            id={"size1"}
+            strokeWidth={5}
+            track={true}
+          ></Circular>
+        </View>
       </View>
     </View>
   );
