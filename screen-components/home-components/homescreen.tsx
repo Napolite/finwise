@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import CircularProgress from "react-native-circular-progress-indicator";
+import { Text, View } from "react-native";
 
 const HomeScreen = () => {
   return (
@@ -14,20 +13,20 @@ const HomeScreen = () => {
       }}
     >
       <View
-        className="max-w-[357px] max-h-[15vw] bg-[#00D09E] mx-auto"
-        style={{ height: 152, width: 357, ...hscStyles?.tabStyle }}
+        className="w-[357px] h-[15vw] bg-[#00D09E] mx-auto px-[20px] rounded-[20px]"
+        style={{ height: 152, width: 357 }}
       >
-        <CircularProgress value={60} />
+        <Text>Helooooooooooooooooo</Text>
       </View>
     </View>
   );
 };
 
-const hscStyles = StyleSheet.create({
-  tabStyle: {
-    borderRadius: 31,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-});
+// const hscStyles = StyleSheet.create({
+//   tabStyle: {
+//     borderRadius: 31,
+//     paddingLeft: 20,
+//     paddingRight: 20,
+//   },
+// });
 export default HomeScreen;
