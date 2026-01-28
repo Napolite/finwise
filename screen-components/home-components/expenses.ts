@@ -1,0 +1,92 @@
+export const transactions = [
+  {
+    name: "Salary",
+    date: "18:27 - April 30",
+    type: "monthly",
+    amount: 40000,
+  },
+  {
+    name: "Freelance Payment",
+    date: "10:15 - April 28",
+    type: "one-time",
+    amount: 12000,
+  },
+  {
+    name: "Office Rent",
+    date: "09:00 - April 25",
+    type: "monthly",
+    amount: -8000,
+  },
+  {
+    name: "Cloud Hosting",
+    date: "14:42 - April 24",
+    type: "monthly",
+    amount: -3200,
+  },
+  {
+    name: "Bonus",
+    date: "16:10 - April 20",
+    type: "one-time",
+    amount: 5000,
+  },
+  {
+    name: "Internet Subscription",
+    date: "08:30 - April 18",
+    type: "monthly",
+    amount: -1500,
+  },
+  {
+    name: "Client Retainer",
+    date: "11:05 - April 15",
+    type: "monthly",
+    amount: 18000,
+  },
+  {
+    name: "Software Licenses",
+    date: "13:50 - April 14",
+    type: "monthly",
+    amount: -2700,
+  },
+  {
+    name: "Equipment Purchase",
+    date: "17:22 - April 12",
+    type: "one-time",
+    amount: -9500,
+  },
+  {
+    name: "Consulting Fee",
+    date: "12:40 - April 10",
+    type: "one-time",
+    amount: 7000,
+  },
+  {
+    name: "Electricity Bill",
+    date: "07:55 - April 8",
+    type: "monthly",
+    amount: -2100,
+  },
+  {
+    name: "Transport Allowance",
+    date: "18:05 - April 5",
+    type: "monthly",
+    amount: 3000,
+  },
+  {
+    name: "Tax Payment",
+    date: "15:30 - April 3",
+    type: "quarterly",
+    amount: -6000,
+  },
+  {
+    name: "Investment Dividend",
+    date: "10:00 - April 2",
+    type: "quarterly",
+    amount: 4200,
+  },
+  {
+    name: "Miscellaneous Expense",
+    date: "19:10 - April 1",
+    type: "one-time",
+    amount: -1800,
+  },
+];

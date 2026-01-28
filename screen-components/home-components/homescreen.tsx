@@ -1,9 +1,11 @@
 import Circular from "@/components/circularProgress";
+import Table from "@/components/table";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import React from "react";
 import { Text, View } from "react-native";
+import { transactions } from "./expenses";
 
 const HomeScreen = () => {
   return (
@@ -56,6 +58,7 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
+      <Table data={[...transactions]} />
     </View>
   );
 };
