@@ -1,6 +1,9 @@
 import Circular from "@/components/circularProgress";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 const HomeScreen = () => {
   return (
@@ -14,10 +17,10 @@ const HomeScreen = () => {
       }}
     >
       <View
-        className="w-[357px] h-[15vh] bg-[#00D09E] mx-auto px-[20px] rounded-[20px] py-[10px]"
+        className="w-[357px] flex flex-row justify-between items-center  h-[15vh] bg-[#00D09E] mx-auto px-[20px] rounded-[20px] py-[10px]"
         style={{ width: 357 }}
       >
-        <View>
+        <View className="flex items-center w-[30%]">
           <Circular
             size={68}
             progress={0.5}
@@ -26,7 +29,31 @@ const HomeScreen = () => {
             id={"size1"}
             strokeWidth={5}
             track={true}
-          ></Circular>
+          >
+            <AntDesign name="car" size={34} color="black" />
+          </Circular>
+          <Text className="text-[14px] font-bold w-[63px] text-center mt-[10px]">
+            Savings on Goals
+          </Text>
+        </View>
+        <View className="w-[2px] h-full bg-[#ffffff]" />
+        <View className="flex justify-between h-full f;ex-1">
+          <View className="flex flex-row items-center gap-x-[10px] flex-1">
+            <FontAwesome name="money" size={31} color="black" />
+            <View>
+              <Text>Revenue last week</Text>
+              <Text className="font-bold">$4,000</Text>
+            </View>
+          </View>
+          <View className="w-full h-[2px] bg-[#ffffff]" />
+
+          <View className="flex flex-row items-center gap-x-[10px] flex-1">
+            <FontAwesome name="cutlery" size={24} color="black" />
+            <View>
+              <Text>Revenue last week</Text>
+              <Text className="font-bold">$4,000</Text>
+            </View>
+          </View>
         </View>
       </View>
     </View>
