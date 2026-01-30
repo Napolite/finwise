@@ -58,7 +58,9 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
-      <Table data={[...transactions]} />
+      <View className="pt-[50px]">
+        <Table data={[...transactions]} />
+      </View>
     </View>
   );
 };
