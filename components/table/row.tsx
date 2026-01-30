@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 const Rows = ({ data }: { data: { [key: string]: any } }) => {
   return (
-    <View className="flex flex-row justify-between items-center w-[357px] mx-auto mb-[20px]">
+    <View className="flex flex-row justify-between items-center w-[357px] mx-auto mb-[20px] mt-[10px]">
       <View className="flex flex-row gap-x-[10px] items-center w-[40%]">
         <View className="bg-[#0068FF] h-[57px] w-[53px] rounded-[20px] flex items-center justify-center">
           {data?.icon}

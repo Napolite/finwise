@@ -3,11 +3,12 @@ import Table from "@/components/table";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-import React from "react";
-import { Text, View } from "react-native";
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 import { transactions } from "./expenses";
 
 const HomeScreen = () => {
+  const [tab, setTab] = useState<String>("d");
   return (
     <View
       className="flex-1 bg-[#ffffff] h-full w-full rounded-t-full"
@@ -22,6 +23,7 @@ const HomeScreen = () => {
         className="w-[357px] flex flex-row justify-between items-center  h-[15vh] bg-[#00D09E] mx-auto px-[20px] rounded-[20px] py-[10px]"
         style={{ width: 357 }}
       >
+        <View></View>
         <View className="flex items-center w-[30%]">
           <Circular
             size={68}
@@ -39,7 +41,7 @@ const HomeScreen = () => {
           </Text>
         </View>
         <View className="w-[2px] h-full bg-[#ffffff]" />
-        <View className="flex justify-between h-full f;ex-1">
+        <View className="flex justify-between h-full">
           <View className="flex flex-row items-center gap-x-[10px] flex-1">
             <FontAwesome name="money" size={31} color="black" />
             <View>
@@ -58,7 +60,32 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
-      <View className="pt-[50px]">
+      <View className="w-[357px] flex flex-row items-center p-[10px] justify-between bg-[#DFF7E2] h-[61px] rounded-[20px] mt-[20px] mx-auto">
+        <TouchableOpacity
+          className="h-full w-[30%] rounded-[10px] flex flex-row justify-center items-center"
+          style={{ backgroundColor: tab === "d" ? "#00d09e" : "transparent" }}
+          onPress={() => setTab("d")}
+        >
+          <Text className="font-bold">Daily</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          className="h-full w-[30%] rounded-[10px] flex flex-row justify-center items-center"
+          style={{ backgroundColor: tab === "w" ? "#00d09e" : "transparent" }}
+          onPress={() => setTab("w")}
+        >
+          <Text className="font-bold">Weekly</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          className="h-full w-[30%] rounded-[10px] flex flex-row justify-center items-center"
+          style={{ backgroundColor: tab === "m" ? "#00d09e" : "transparent" }}
+          onPress={() => {
+            setTab("m");
+          }}
+        >
+          <Text className="font-bold">Monthly</Text>
+        </TouchableOpacity>
+      </View>
+      <View className="mb-[80px] h-[300px]">
         <Table data={[...transactions]} />
       </View>
     </View>
