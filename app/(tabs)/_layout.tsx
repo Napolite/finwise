@@ -1,6 +1,8 @@
 import Feather from "@expo/vector-icons/Feather";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 import React from "react";
+import { View } from "react-native";
 
 const TabsLayout = () => {
   return (
@@ -24,7 +26,28 @@ const TabsLayout = () => {
           name="home/index"
           options={{
             tabBarLabel: () => null,
-            tabBarIcon: () => <Feather name="home" size={25} color="black" />,
+            tabBarIcon: ({ focused }) => (
+              <View
+                className="bg-[red] h-[57px] w-[57px] m-auto flex items-center justify-center rounded-[40%]"
+                style={{ backgroundColor: focused ? "#00D09E" : "transparent" }}
+              >
+                <Feather name="home" size={25} color="black" />
+              </View>
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="analysis/index"
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({ focused }) => (
+              <View
+                className="bg-[red] h-[57px] w-[57px] m-auto flex items-center justify-center rounded-[40%]"
+                style={{ backgroundColor: focused ? "#00D09E" : "transparent" }}
+              >
+                <FontAwesome name="search-plus" size={25} color="black" />
+              </View>
+            ),
           }}
         />
       </Tabs>
