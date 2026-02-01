@@ -1,5 +1,4 @@
 import BalanceStatement from "@/components/balanceStatement";
-import ProgressBar from "@/components/progress-bar";
 import HomeScreen from "@/screen-components/home-components/homescreen";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import React from "react";
@@ -22,13 +21,6 @@ const Home = () => {
         </View>
       </View>
       <BalanceStatement />
-      <View className="w-[80%] mx-auto mt-[20px]">
-        <ProgressBar innerText="30%" outerText="$20,000" progress="30%" />
-        <View className="flex flex-row items-center gap-x-[10px] mx-auto mt-[10px]">
-          <AntDesign name="check-square" size={20} color="black" />
-          <Text className="text-[20px]">30% of your expenses. Looks good.</Text>
-        </View>
-      </View>
       <HomeScreen />
     </View>
   );
