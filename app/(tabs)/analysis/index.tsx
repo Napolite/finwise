@@ -117,7 +117,7 @@ const Analysis = () => {
                 track={true}
                 trackStroke=""
               >
-                <Text className="text-[#F1FFF3] text-[16px] font-bold">
+                <Text className="text-[#F1FFF3] text-[20px] font-bold">
                   30%
                 </Text>
               </Circular>
@@ -136,7 +136,7 @@ const Analysis = () => {
                 track={true}
                 trackStroke=""
               >
-                <Text className="text-[#F1FFF3] text-[16px] font-bold">
+                <Text className="text-[#F1FFF3] text-[20px] font-bold">
                   50%
                 </Text>
               </Circular>
