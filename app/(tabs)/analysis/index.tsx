@@ -1,20 +1,21 @@
 import BalanceStatement from "@/components/balanceStatement";
+import Circular from "@/components/circularProgress";
 import Header from "@/components/header";
 import AnalysisGraph from "@/screen-components/analysis-component/analysis-graph";
 import Feather from "@expo/vector-icons/Feather";
 import React, { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 const Analysis = () => {
   const [tab, setTab] = useState("d");
   return (
-    <View className="bg-[#00D09E] min-h-full">
+    <ScrollView className="bg-[#00D09E] h-full flex-1">
       <View>
         <Header pageTitle={"Analysis"} />
       </View>
       <BalanceStatement />
       <View
-        className="flex-1 bg-[#ffffff] h-full w-full rounded-t-full"
+        className="flex-1 bg-[#ffffff] min-h-full w-full rounded-t-full"
         style={{
           borderTopLeftRadius: 80,
           borderTopRightRadius: 80,
@@ -75,7 +76,7 @@ const Analysis = () => {
 
         {/* other side */}
 
-        <View className="flex flex-row w-[80%] justify-between mx-auto mt-[50px] px-[10px]">
+        <View className="flex flex-row w-[70%] justify-between mx-auto mt-[50px] px-[10px]">
           <View>
             <View className="flex  gap-x-[10px] items-center">
               <View className="border border-[3px] border-[#00D09E] border-solid w-[25px] h-[25px] flex flex-row items-center justify-center rounded-[5px]">
@@ -83,7 +84,7 @@ const Analysis = () => {
               </View>
               <Text className="text-[16px]">Total Balance</Text>
             </View>
-            <Text className="text-[32px] font-bold text-[#000000]">
+            <Text className="text-[24px] font-bold text-[#000000]">
               $7,783.00
             </Text>
           </View>
@@ -95,13 +96,58 @@ const Analysis = () => {
               </View>
               <Text className="text-[16px]">Total Expenses</Text>
             </View>
-            <Text className="text-[32px] font-bold text-[#0068FF]">
+            <Text className="text-[24px] font-bold text-[#0068FF]">
               -$1.187.40
             </Text>
           </View>
         </View>
+
+        {/*my targets */}
+        <View className="w-[80%] mx-auto mt-[30px]">
+          <Text className="text-[18px] font-bold mb-[30px]">My Targets</Text>
+          <View className="h-fit w-full flex-1 mb-[100px] flex flex-row justify-between">
+            <View className="bg-[#6DB6FE] w-[47%] h-[167px] rounded-[50px] flex items-center justify-center">
+              <Circular
+                size={103}
+                progress={0.3}
+                fill1={"#0068FF"}
+                fill2={"#0068FF"}
+                id={"size1"}
+                strokeWidth={5}
+                track={true}
+                trackStroke=""
+              >
+                <Text className="text-[#F1FFF3] text-[16px] font-bold">
+                  30%
+                </Text>
+              </Circular>
+              <Text className="text-[#F1FFF3] text-[16px] font-bold mt-[10px]">
+                Travel
+              </Text>
+            </View>
+            <View className="bg-[#6DB6FE] w-[47%] h-[167px] rounded-[50px] flex items-center justify-center">
+              <Circular
+                size={103}
+                progress={0.5}
+                fill1={"#0068FF"}
+                fill2={"#0068FF"}
+                id={"size1"}
+                strokeWidth={5}
+                track={true}
+                trackStroke=""
+              >
+                <Text className="text-[#F1FFF3] text-[16px] font-bold">
+                  50%
+                </Text>
+              </Circular>
+              <Text className="text-[#F1FFF3] text-[16px] font-bold mt-[10px]">
+                Car
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

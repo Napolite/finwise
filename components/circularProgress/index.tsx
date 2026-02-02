@@ -14,6 +14,7 @@ type CircularProps = {
   children?: React.ReactNode;
   id: string;
   track?: boolean;
+  trackStroke?: string;
 };
 
 function Circular({
@@ -25,6 +26,7 @@ function Circular({
   children,
   id,
   track = true,
+  trackStroke,
 }: CircularProps) {
   const center = size / 2;
   const radius = center - strokeWidth / 2;
@@ -47,7 +49,7 @@ function Circular({
             cx={center}
             cy={center}
             r={radius}
-            stroke="#ffffff"
+            stroke={trackStroke || "#ffffff"}
             strokeWidth={strokeWidth}
             fill="none"
           />
