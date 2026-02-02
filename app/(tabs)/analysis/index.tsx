@@ -1,5 +1,6 @@
 import BalanceStatement from "@/components/balanceStatement";
 import Header from "@/components/header";
+import AnalysisGraph from "@/screen-components/analysis-component/analysis-graph";
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
@@ -53,6 +54,12 @@ const Analysis = () => {
           >
             <Text className="font-bold">Yearly</Text>
           </TouchableOpacity>
+        </View>
+        <View className="w-[80%] max-h-[297px] bg-[#DFF7E2] mx-auto mt-[30px] rounded-[30px] p-[10px]">
+          <View className="mb-[20px]">
+            <Text className="text-[16px]">Income & Expenses</Text>
+          </View>
+          <AnalysisGraph />
         </View>
       </View>
     </View>
