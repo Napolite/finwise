@@ -1,10 +1,49 @@
+import Header from "@/components/header";
+import { Feather } from "@expo/vector-icons";
 import React from "react";
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
 const Transactions = () => {
   return (
-    <View>
-      <Text>Transactions</Text>
+    <View className="bg-[#00D09E] h-full w-full">
+      <Header pageTitle="Transactions" />
+      <ScrollView className="bg-[#00D09E] h-full flex-1 mt-[20px]">
+        <View className="bg-[#F1FFF3] w-[90%] flex items-center rounded-[10px] py-[10px] gap-y-[5px] mx-auto">
+          <View className="flex  gap-x-[10px] items-center gap-y-[5px]">
+            <Text className="text-[16px]">Total Balance</Text>
+          </View>
+          <Text className="text-[24px] font-bold text-[#000000]">
+            $7,783.00
+          </Text>
+        </View>
+
+        {/* income and expenses */}
+        <View className="flex flex-row w-[90%] justify-between mx-auto mt-[20px]">
+          <View className="bg-[#F1FFF3] w-[47%] flex items-center rounded-[10px] py-[10px] gap-y-[5px]">
+            <View className="flex  gap-x-[10px] items-center gap-y-[5px]">
+              <View className="border border-[3px] border-[#00D09E] border-solid w-[25px] h-[25px] flex flex-row items-center justify-center rounded-[5px]">
+                <Feather name="arrow-up-right" size={17} color="#00D09E" />
+              </View>
+              <Text className="text-[16px]">Income</Text>
+            </View>
+            <Text className="text-[24px] font-bold text-[#000000]">
+              $4,120.00
+            </Text>
+          </View>
+
+          <View className="bg-[#F1FFF3] w-[47%] flex items-center rounded-[10px] py-[10px] gap-y-[5px]">
+            <View className="flex w gap-x-[10px] items-center gap-y-[5px]">
+              <View className="border border-[3px] border-[#0068FF] border-solid w-[25px] h-[25px] flex flex-row items-center justify-center rounded-[5px]">
+                <Feather name="arrow-down-right" size={17} color="#0068FF" />
+              </View>
+              <Text className="text-[16px]">Expenses</Text>
+            </View>
+            <Text className="text-[24px] font-bold text-[#0068FF]">
+              -$1.187.40
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
