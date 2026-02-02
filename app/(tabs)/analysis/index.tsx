@@ -1,6 +1,7 @@
 import BalanceStatement from "@/components/balanceStatement";
 import Header from "@/components/header";
 import AnalysisGraph from "@/screen-components/analysis-component/analysis-graph";
+import Feather from "@expo/vector-icons/Feather";
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
@@ -55,9 +56,17 @@ const Analysis = () => {
             <Text className="font-bold">Yearly</Text>
           </TouchableOpacity>
         </View>
-        <View className="w-[80%] max-h-[297px] bg-[#DFF7E2] mx-auto mt-[30px] rounded-[30px] p-[10px]">
-          <View className="mb-[20px]">
-            <Text className="text-[16px]">Income & Expenses</Text>
+        <View className="w-[80%] max-h-[257px] bg-[#DFF7E2] mx-auto mt-[30px] rounded-[30px] py-[10px] px-[20px]">
+          <View className="mb-[20px] flex justify-between flex-row items-center">
+            <Text className="text-[16px] font-bold">Income & Expenses</Text>
+            <View className="flex justify-between items-center flex-row gap-x-[20px]">
+              <View className="h-[32px] w-[32px] rounded-[10px] bg-dgreen items-center justify-center flex">
+                <Feather name="search" size={20} color="black" />
+              </View>
+              <View className="h-[32px] w-[32px] rounded-[10px] bg-dgreen items-center justify-center flex">
+                <Feather name="calendar" size={20} color="black" />
+              </View>
+            </View>
           </View>
           <AnalysisGraph />
         </View>

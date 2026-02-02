@@ -62,6 +62,7 @@ const AnalysisGraph = () => {
         roundedTop
         roundedBottom
         spacing={50}
+        stepHeight={50}
         // height={8}
       />
     </View>
