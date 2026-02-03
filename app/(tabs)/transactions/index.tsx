@@ -55,6 +55,7 @@ const Transactions = () => {
             borderTopRightRadius: 80,
             marginTop: 40,
             paddingTop: 40,
+            paddingBottom: 40,
             height: "100%",
           }}
         >
