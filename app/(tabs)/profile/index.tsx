@@ -25,14 +25,14 @@ const Profile = () => {
         <View className="w-[80%] mx-auto gap-y-[30px]" style={{ top: -50 }}>
           <View className="flex flex-row items-center gap-x-[20px]">
             <View className="bg-[#0068FF] rounded-[22px] w-[57px] h-[53px] flex items-center justify-center">
-              <Ionicons name="person-outline" size={25} color="white" />
+              <Ionicons name="person-outline" size={28} color="white" />
             </View>
             <Text className="text-[18px]">Edit Profile</Text>
           </View>
           {/* Security */}
           <View className="flex flex-row items-center gap-x-[20px]">
             <View className="bg-[#0068FF] rounded-[22px] w-[57px] h-[53px] flex items-center justify-center">
-              <Ionicons name="lock-closed-outline" size={25} color="white" />
+              <Ionicons name="lock-closed-outline" size={28} color="white" />
             </View>
             <Text className="text-[18px]">Security</Text>
           </View>
@@ -40,7 +40,7 @@ const Profile = () => {
           {/* Settings */}
           <View className="flex flex-row items-center gap-x-[20px]">
             <View className="bg-[#0068FF] rounded-[22px] w-[57px] h-[53px] flex items-center justify-center">
-              <Ionicons name="settings-outline" size={25} color="white" />
+              <Ionicons name="settings-outline" size={28} color="white" />
             </View>
             <Text className="text-[18px]">Settings</Text>
           </View>
@@ -48,7 +48,7 @@ const Profile = () => {
           {/* Help */}
           <View className="flex flex-row items-center gap-x-[20px]">
             <View className="bg-[#0068FF] rounded-[22px] w-[57px] h-[53px] flex items-center justify-center">
-              <Ionicons name="help-circle-outline" size={25} color="white" />
+              <Ionicons name="help-circle-outline" size={28} color="white" />
             </View>
             <Text className="text-[18px]">Help</Text>
           </View>
@@ -56,7 +56,7 @@ const Profile = () => {
           {/* Logout */}
           <View className="flex flex-row items-center gap-x-[20px]">
             <View className="bg-red-500 rounded-[22px] w-[57px] h-[53px] flex items-center justify-center">
-              <Ionicons name="log-out-outline" size={25} color="white" />
+              <Ionicons name="log-out-outline" size={28} color="white" />
             </View>
             <Text className="text-[18px] text-red-500">Logout</Text>
           </View>
