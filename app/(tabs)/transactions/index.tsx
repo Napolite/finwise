@@ -3,7 +3,7 @@ import Table from "@/components/table";
 import { Feather } from "@expo/vector-icons";
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
-import { transactionsByMonth } from "./transaction";
+import { transactionsByMonth } from "../../../constants/transaction";
 
 const Transactions = () => {
   return (
@@ -61,7 +61,7 @@ const Transactions = () => {
         >
           <View>
             {transactionsByMonth.map((trans, index) => (
-              <View className="mb-[20px]">
+              <View className="mb-[20px]" key={index}>
                 <View className="flex w-[80%] mx-auto flex-row justify-between mb-[20px] items-center">
                   <Text className="  text-[18px] font-bold">
                     {trans?.month}
