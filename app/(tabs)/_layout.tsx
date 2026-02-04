@@ -69,6 +69,24 @@ const TabsLayout = () => {
             ),
           }}
         />
+        <Tabs.Screen
+          name="category/index"
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({ focused }) => (
+              <View
+                className="bg-[red] h-[57px] w-[57px] m-auto flex items-center justify-center rounded-[40%]"
+                style={{ backgroundColor: focused ? "#00D09E" : "transparent" }}
+              >
+                <FontAwesome6
+                  name="arrow-right-arrow-left"
+                  size={25}
+                  color="black"
+                />
+              </View>
+            ),
+          }}
+        />
       </Tabs>
     </>
   );
