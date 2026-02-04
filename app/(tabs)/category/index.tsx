@@ -2,7 +2,7 @@ import BalanceStatement from "@/components/balanceStatement";
 import Header from "@/components/header";
 import { categories } from "@/constants/categorylist";
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 const Category = () => {
   return (
@@ -22,7 +22,7 @@ const Category = () => {
       >
         <View className="flex flex-row max-w-[90%] flex-wrap mx-auto justify-between b">
           {categories.map((cat) => (
-            <View
+            <TouchableOpacity
               key={cat.name}
               className="w-[32%] h-[150px]  flex items-center justify-center gap-y-[10px] mb-[20px]"
             >
@@ -30,7 +30,7 @@ const Category = () => {
                 {cat.icon}
               </View>
               <Text className="text-[16px] font-semibold">{cat.name}</Text>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </View>
