@@ -7,10 +7,8 @@ const ProfilePic = () => {
     <View
       className=""
       style={{
-        position: "absolute",
+        // position: "relative",
         top: -100,
-        left: "50%",
-        transform: [{ translateX: -50 }],
         display: "flex",
         alignItems: "center",
       }}
