@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import ProfilePic from "@/components/profilepic/profile";
 import React from "react";
 import { View } from "react-native";
 
@@ -11,14 +12,14 @@ const Profile = () => {
         style={{
           borderTopLeftRadius: 80,
           borderTopRightRadius: 80,
-          marginTop: 40,
+          marginTop: 100,
           paddingTop: 40,
           paddingBottom: 40,
           height: "100%",
         }}
       >
         <View>
-          <Profile />
+          <ProfilePic />
         </View>
       </View>
     </View>
