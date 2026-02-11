@@ -1,11 +1,19 @@
 import AntDesign from "@expo/vector-icons/AntDesign";
 import React from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
-const Header = ({ pageTitle }: { pageTitle: string }) => {
+const Header = ({
+  pageTitle,
+  backAction,
+}: {
+  pageTitle: string;
+  backAction?: any;
+}) => {
   return (
     <View className="w-full justify-between bg-transparent flex flex-row h-[45px] px-[30px] items-center">
-      <AntDesign name="arrow-left" size={24} color="#ffffff" />
+      <Pressable onPress={backAction}>
+        <AntDesign name="arrow-left" size={24} color="#ffffff" />
+      </Pressable>
       <Text className="text-[#052224] text-[24px] font-semibold">
         {pageTitle}
       </Text>
