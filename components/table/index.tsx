@@ -1,14 +1,20 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import Animated from "react-native-reanimated";
 import Rows from "./row";
 
-const Table = ({ data }: { data: { [key: string]: any }[] }) => {
+const Table = ({
+  data,
+  handleScrollAction,
+}: {
+  handleScrollAction?: (argv: any) => void | any;
+  data: { [key: string]: any }[];
+}) => {
   return (
-    <ScrollView className="">
+    <Animated.ScrollView className="" onScroll={handleScrollAction}>
       {data?.map((d, index) => (
         <Rows data={d} key={index} />
       ))}
-    </ScrollView>
+    </Animated.ScrollView>
   );
 };
 

@@ -3,8 +3,19 @@ import HomeScreen from "@/screen-components/home-components/homescreen";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import React from "react";
 import { Text, View } from "react-native";
+import {
+  useAnimatedScrollHandler,
+  useSharedValue,
+} from "react-native-reanimated";
 
 const Home = () => {
+  const scrollY = useSharedValue(0);
+
+  const handTableScroll = useAnimatedScrollHandler((event) => {
+    scrollY.value = event.contentOffset.y;
+
+    // console.log("scrollY value", scrollY);
+  });
   return (
     <View className="bg-[#00D09E] min-h-full">
       <View>
@@ -21,7 +32,7 @@ const Home = () => {
         </View>
       </View>
       <BalanceStatement />
-      <HomeScreen />
+      <HomeScreen handleScroll={handTableScroll} scrollY={scrollY} />
     </View>
   );
 };

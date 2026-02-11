@@ -5,23 +5,68 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+import Animated, {
+  Extrapolation,
+  interpolate,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 import { transactions } from "./expenses";
 
-const HomeScreen = () => {
+const HomeScreen = ({ handleScroll, scrollY }: any) => {
   const [tab, setTab] = useState<String>("d");
+  const [nativeHeight, setNativeHeight] = useState(0);
+
+  const viewStyle = useAnimatedStyle(() => {
+    const translateY = interpolate(
+      scrollY.value,
+      [0, 320],
+      [0, -200],
+      Extrapolation.CLAMP,
+    );
+
+    return {
+      transform: [{ translateY }],
+    };
+  });
+
+  const tableStyle = useAnimatedStyle(() => {
+    const animatedHeight = interpolate(
+      scrollY.value,
+      [0, 320],
+      [300, 500],
+      Extrapolation.CLAMP,
+    );
+
+    return {
+      height: animatedHeight,
+    };
+  });
+
+  const getHeight = (event: any) => {
+    const { height } = event.nativeEvent.layout;
+
+    setNativeHeight(height);
+
+    console.log("height", height);
+  };
+
   return (
-    <View
-      className="flex-1 bg-[#ffffff] h-full w-full rounded-t-full"
-      style={{
-        borderTopLeftRadius: 80,
-        borderTopRightRadius: 80,
-        marginTop: 40,
-        paddingTop: 40,
-      }}
+    <Animated.View
+      className="flex-0 bg-[#ffffff] h-fit w-full rounded-t-full"
+      style={[
+        {
+          borderTopLeftRadius: 80,
+          borderTopRightRadius: 80,
+          marginTop: 40,
+          paddingTop: 40,
+        },
+        viewStyle,
+      ]}
+      onLayout={getHeight}
     >
       <View
         className="w-[357px] flex flex-row justify-between items-center  h-[15vh] bg-[#00D09E] mx-auto px-[20px] rounded-[20px] py-[10px]"
-        style={{ width: 357 }}
+        style={[{ width: 357 }]}
       >
         <View></View>
         <View className="flex items-center w-[30%]">
@@ -85,10 +130,10 @@ const HomeScreen = () => {
           <Text className="font-bold">Monthly</Text>
         </TouchableOpacity>
       </View>
-      <View className="mb-[80px] h-[300px]">
-        <Table data={[...transactions]} />
-      </View>
-    </View>
+      <Animated.View className="mb-[80px]" style={tableStyle}>
+        <Table data={[...transactions]} handleScrollAction={handleScroll} />
+      </Animated.View>
+    </Animated.View>
   );
 };
 
