@@ -3,11 +3,19 @@ import Circular from "@/components/circularProgress";
 import Header from "@/components/header";
 import AnalysisGraph from "@/screen-components/analysis-component/analysis-graph";
 import Feather from "@expo/vector-icons/Feather";
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Pressable,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const Analysis = () => {
   const [tab, setTab] = useState("d");
+  const router = useRouter();
   return (
     <View className="bg-[#00D09E] h-full flex-1">
       <View>
@@ -72,9 +80,15 @@ const Analysis = () => {
             <View className="mb-[20px] flex justify-between flex-row items-center">
               <Text className="text-[16px] font-bold">Income & Expenses</Text>
               <View className="flex justify-between items-center flex-row gap-x-[20px]">
-                <View className="h-[32px] w-[32px] rounded-[10px] bg-dgreen items-center justify-center flex">
-                  <Feather name="search" size={20} color="black" />
-                </View>
+                {
+                  <Pressable
+                    onPress={() => router.navigate("/search-calendar")}
+                  >
+                    <View className="h-[32px] w-[32px] rounded-[10px] bg-dgreen items-center justify-center flex">
+                      <Feather name="search" size={20} color="black" />
+                    </View>
+                  </Pressable>
+                }
                 <View className="h-[32px] w-[32px] rounded-[10px] bg-dgreen items-center justify-center flex">
                   <Feather name="calendar" size={20} color="black" />
                 </View>
