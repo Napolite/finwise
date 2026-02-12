@@ -17,7 +17,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="search-calendar" />
+        <Stack.Screen name="search" />
       </Stack>
     </>
   );

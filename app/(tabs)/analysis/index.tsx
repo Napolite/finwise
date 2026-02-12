@@ -79,11 +79,9 @@ const Analysis = () => {
           <View className="w-[80%] max-h-[257px] bg-[#DFF7E2] mx-auto mt-[30px] rounded-[30px] py-[10px] px-[20px]">
             <View className="mb-[20px] flex justify-between flex-row items-center">
               <Text className="text-[16px] font-bold">Income & Expenses</Text>
-              <View className="flex justify-between items-center flex-row gap-x-[20px]">
+              <View className="flex items-center flex-row gap-x-[20px]">
                 {
-                  <Pressable
-                    onPress={() => router.navigate("/search-calendar")}
-                  >
+                  <Pressable onPress={() => router.navigate("/search")}>
                     <View className="h-[32px] w-[32px] rounded-[10px] bg-dgreen items-center justify-center flex">
                       <Feather name="search" size={20} color="black" />
                     </View>
