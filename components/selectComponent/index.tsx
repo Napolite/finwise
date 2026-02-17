@@ -1,3 +1,5 @@
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Feather from "@expo/vector-icons/Feather";
 import React, { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
@@ -77,12 +79,17 @@ const Select = ({
     <View className="w-full">
       <Text className="text-[16px] font-bold mb-[10px]">{label}</Text>
       <Pressable onPress={() => setDropOpen(!dropOpen)}>
-        <View className="w-full bg-[#DFF7E2] h-[50px] rounded-[20px] relative flex flex-row items-center">
-          <Text className="text-[16px] font-bold px-[20px]">
+        <View className="w-full bg-[#DFF7E2] h-[50px] rounded-[20px] relative flex flex-row items-center justify-between px-[20px]">
+          <Text className="text-[16px] font-bold ">
             {type === "dropdown"
               ? selection
               : _selectedDate.toLocaleString().split(",")[0]}
           </Text>
+          {type === "calendar" ? (
+            <Feather name="calendar" size={16} color="black" />
+          ) : (
+            <AntDesign name="caret-down" size={16} color="black" />
+          )}
         </View>
       </Pressable>
       {dropOpen && renderOpt()}
