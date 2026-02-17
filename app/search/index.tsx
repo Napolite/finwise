@@ -25,7 +25,10 @@ const SearchCalendar = () => {
         }}
       >
         <View className="w-[80%] mx-auto">
-          <Select options={categories.map((cat) => cat?.name)} />
+          <Select
+            options={categories.map((cat) => cat?.name)}
+            label="Catogories"
+          />
         </View>
       </View>
     </View>
