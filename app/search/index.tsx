@@ -28,6 +28,15 @@ const SearchCalendar = () => {
           <Select
             options={categories.map((cat) => cat?.name)}
             label="Catogories"
+            key={"cat1"}
+          />
+        </View>
+        <View className="w-[80%] mx-auto mt-[50px]">
+          <Select
+            type="calendar"
+            selectedDate={""}
+            label="Date"
+            key={"date1"}
           />
         </View>
       </View>
