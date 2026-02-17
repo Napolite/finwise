@@ -1,12 +1,17 @@
 import Header from "@/components/header";
+import RadioButton from "@/components/RadioButton";
 import Select from "@/components/selectComponent";
 import { categories } from "@/constants/categorylist";
 import { useRouter } from "expo-router";
-import React from "react";
-import { TextInput, View } from "react-native";
+import React, { useState } from "react";
+import { Text, TextInput, View } from "react-native";
 
 const SearchCalendar = () => {
   const router = useRouter();
+  const [buttons, setButtons] = useState<Record<string, boolean>>({
+    income: false,
+    expenses: false,
+  });
   return (
     <View>
       <Header pageTitle={"Search"} backAction={() => router.back()} />
@@ -26,6 +31,7 @@ const SearchCalendar = () => {
       >
         <View className="w-[80%] mx-auto">
           <Select
+            type="dropdown"
             options={categories.map((cat) => cat?.name)}
             label="Catogories"
             key={"cat1"}
@@ -38,6 +44,31 @@ const SearchCalendar = () => {
             label="Date"
             key={"date1"}
           />
+        </View>
+        <View className="mt-[50px] w-[80%] mx-auto">
+          <Text className="text-[16px] font-bold mb-[10px]">Report</Text>
+          <View className="flex flex-row gap-x-[40px]">
+            <RadioButton
+              label={"Income"}
+              selected={buttons?.income}
+              onPress={() => {
+                setButtons({
+                  expenses: buttons?.expenses ? false : true,
+                  income: !buttons?.income,
+                });
+              }}
+            />
+            <RadioButton
+              label={"Expenses"}
+              selected={buttons?.expenses}
+              onPress={() => {
+                setButtons({
+                  income: buttons?.income ? false : true,
+                  expenses: !buttons?.expenses,
+                });
+              }}
+            />
+          </View>
         </View>
       </View>
     </View>
