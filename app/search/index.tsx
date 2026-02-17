@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import Select from "@/components/selectComponent";
+import { categories } from "@/constants/categorylist";
 import { useRouter } from "expo-router";
 import React from "react";
 import { TextInput, View } from "react-native";
@@ -24,7 +25,7 @@ const SearchCalendar = () => {
         }}
       >
         <View className="w-[80%] mx-auto">
-          <Select options={["hello", "wprld"]} />
+          <Select options={categories.map((cat) => cat?.name)} />
         </View>
       </View>
     </View>
