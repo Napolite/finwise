@@ -9,7 +9,7 @@ import { Text, TextInput, View } from "react-native";
 const SearchCalendar = () => {
   const router = useRouter();
   const [buttons, setButtons] = useState<Record<string, boolean>>({
-    income: false,
+    income: true,
     expenses: false,
   });
   return (
