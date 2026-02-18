@@ -53,8 +53,8 @@ const SearchCalendar = () => {
               selected={buttons?.income}
               onPress={() => {
                 setButtons({
-                  expenses: buttons?.expenses ? false : true,
-                  income: !buttons?.income,
+                  expenses: false,
+                  income: true,
                 });
               }}
             />
@@ -63,8 +63,8 @@ const SearchCalendar = () => {
               selected={buttons?.expenses}
               onPress={() => {
                 setButtons({
-                  income: buttons?.income ? false : true,
-                  expenses: !buttons?.expenses,
+                  income: false,
+                  expenses: true,
                 });
               }}
             />

@@ -22,11 +22,6 @@ const Select = ({
   );
 
   const [dropOpen, setDropOpen] = useState(false);
-  console.log(
-    "date 5",
-    selectedDate?.toLocaleString(),
-    _selectedDate.toLocaleString(),
-  );
 
   const renderDropDown = () => {
     return (
