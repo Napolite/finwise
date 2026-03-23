@@ -1,16 +1,10 @@
-import Feather from "@expo/vector-icons/Feather";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import Octicons from "@expo/vector-icons/Octicons";
-import { Tabs } from "expo-router";
+import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 import React from "react";
-import { View } from "react-native";
 
 const TabsLayout = () => {
   return (
     <>
-      <Tabs
+      {/* <Tabs
         screenOptions={{
           headerShown: false,
           tabBarStyle: {
@@ -122,7 +116,18 @@ const TabsLayout = () => {
             ),
           }}
         />
-      </Tabs>
+      </Tabs> */}
+
+      <NativeTabs>
+        <NativeTabs.Trigger name="home/index">
+          <Label>Home</Label>
+          <Icon sf="house" drawable="custom_android_drawable" />
+        </NativeTabs.Trigger>
+        <NativeTabs.Trigger name="analysis/index">
+          <Label>Analysis</Label>
+          <Icon sf="house" drawable="custom_android_drawable" />
+        </NativeTabs.Trigger>
+      </NativeTabs>
     </>
   );
 };
